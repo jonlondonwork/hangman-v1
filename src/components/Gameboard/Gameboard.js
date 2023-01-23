@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import { useState, useRef } from 'react';
 import Word from '../Word';
 import Keyboard from '../Keyboard';
@@ -73,7 +73,7 @@ export default function Gameboard(props) {
             const newState = { ...prevState };
             newState.guessButtons[letterIndex].enabled = false;
             newState.selectedKey = mySelectedKey;
-            newState.isGameOver = state.incorrectGuessFunctions.length <1;
+            newState.isGameOver = !state.incorrectGuessFunctions.length;
             return newState;
         });
     }
@@ -89,10 +89,6 @@ export default function Gameboard(props) {
             </Column>
         </Grid>
     );
-
-    function isGameOver() {
-        return !state.incorrectGuessFunctions.length;
-    }
 
     function getRandomInt(min, max) {
         min = Math.ceil(min);

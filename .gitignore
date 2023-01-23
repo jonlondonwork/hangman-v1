@@ -1,3 +1,7 @@
-build/
-yarn*
 node_modules
+lib
+es
+umd
+build
+dist
+yarn*
