@@ -1,0 +1,12 @@
+@use '@carbon/layout';
+
+.word {
+   padding: layout.$spacing-05;
+}
+
+.letter {
+    background-color: red;
+    padding: layout.$spacing-03;
+    margin-right: layout.$spacing-05;
+    font-weight: bolder;
+}
