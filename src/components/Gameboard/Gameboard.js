@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useRef } from 'react';
 import Word from '../Word';
 import Keyboard from '../Keyboard';
-import { Grid, Column } from '@carbon/react';
+import { Grid, Column, Row } from '@carbon/react';
 import Canvas from '../Canvas';
 export default function Gameboard(props) {
 
@@ -34,7 +34,7 @@ export default function Gameboard(props) {
             drawRightLeg,
             drawLeftLeg
         ],
-        isGuessCorrect: false, //initial state
+        isGuessCorrect: false,
         isGameOver: false,
         guessButtons: initGuessButtons
     }
@@ -80,12 +80,15 @@ export default function Gameboard(props) {
 
     return (
         <Grid>
-            <Column sm={4} md={8} lg={16}>
+            <Column sm={4} md={8} lg={16} >
                 <Canvas canvasRef={canvasRef} />
                 <Word word={state.word} correctGuesses={state.correctGuesses} isGameOver={state.isGameOver} />
+            </Column>
+            <Column sm={4} md={8} lg={{ span: 8, offset: 4 }} >
                 <Keyboard handleChange={handleGuess} guessButtons={state.guessButtons} />
-                <br /><br />
-                <button onClick={(e) => handleReset(e)}>Play Again</button>
+                <div className='center'>
+                    <button className='button' onClick={(e) => handleReset(e)}>Play Again</button>
+                </div>
             </Column>
         </Grid>
     );

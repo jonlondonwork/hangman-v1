@@ -1,0 +1,8 @@
+@use '@carbon/layout';
+
+.button {
+    border-radius: 6px;
+    margin: layout.$spacing-03;
+    width: 60px;
+    height: 60px;
+}

@@ -1,0 +1,7 @@
+@use '@carbon/layout';
+.letter {
+    border-radius: 8px;
+    margin: layout.$spacing-03;
+    padding: 35px;
+    font-size: x-large;
+}
